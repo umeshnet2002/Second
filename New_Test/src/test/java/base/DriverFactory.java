@@ -17,7 +17,7 @@ public class DriverFactory {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 
-			WebDriverManager.chromedriver().setup();
+//			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 
 			// Required for Docker/Linux containers
@@ -38,7 +38,7 @@ public class DriverFactory {
 
 		else if (browser.equalsIgnoreCase("edge")) {
 
-//			WebDriverManager.edgedriver().setup();
+			WebDriverManager.edgedriver().setup();
 			EdgeOptions options = new EdgeOptions();
 
 			options.addArguments("--headless=new");
