@@ -23,4 +23,4 @@ COPY . .
 
 RUN mvn clean install -DskipTests
 
-CMD ["mvn","test","-DsuiteXmlFile=testng.xml"]
+CMD ["mvn","test"]
