@@ -1,81 +1,81 @@
-pipeline { agent any
+pipeline {
+    agent any
 
-tools {
-    maven 'Maven3'
-    jdk 'JDK'
-}
-
-stages {
-
-    stage('Checkout') {
-        steps {
-            git branch: 'main',
-                url: 'https://github.com/umeshnet2002/Second'
-        }
+    tools {
+        maven 'Maven3'
+        jdk 'JDK'
     }
 
-    stage('Build') {
-        steps {
-            dir('New_test') {
-                bat 'mvn clean'
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/umeshnet2002/Second'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('New_test') {
+                    bat 'mvn clean'
+                }
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                dir('New_test') {
+                    bat 'mvn compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('New_test') {
+                    bat 'mvn test'
+                }
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                dir('New_test') {
+                    bat 'mvn package -DskipTests'
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                dir('New_test') {
+                    bat 'docker build -t testng-framework .'
+                }
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                dir('New_test') {
+                    bat 'docker run --rm testng-framework'
+                }
             }
         }
     }
 
-    stage('Compile') {
-        steps {
-            dir('New_test') {
-                bat 'mvn compile'
-            }
-        }
-    }
-
-    stage('Test') {
-        steps {
-            dir('New_test') {
-                bat 'mvn test'
-            }
+    post {
+        success {
+            echo 'Build Successful'
         }
 
-        post {
-            always {
-                junit '**/target/surefire-reports/*.xml'
-            }
+        failure {
+            echo 'Build Failed'
         }
     }
-
-    stage('Package') {
-        steps {
-            dir('New_test') {
-                bat 'mvn package'
-            }
-        }
-    }
-
-    stage('Docker Build') {
-        steps {
-            dir('New_test') {
-                bat 'docker build -t testng-framework .'
-            }
-        }
-    }
-
-    stage('Docker Run') {
-        steps {
-            dir('New_test') {
-                bat 'docker run testng-framework'
-            }
-        }
-    }
-}
-
-post {
-    success {
-        echo 'Build Successful'
-    }
-
-    failure {
-        echo 'Build Failed'
-    }
-}
 }
