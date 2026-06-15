@@ -38,7 +38,7 @@ public class DriverFactory {
 
 		else if (browser.equalsIgnoreCase("edge")) {
 
-			WebDriverManager.edgedriver().setup();
+//			WebDriverManager.edgedriver().setup();
 			EdgeOptions options = new EdgeOptions();
 
 			options.addArguments("--headless=new");
