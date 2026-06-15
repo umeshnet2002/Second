@@ -15,9 +15,9 @@ public class TestListener implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 
-		System.out.println("Started : " + result.getParameters()[1].toString());
+		System.out.println("Started : " + result.getName());
 
-		test = extent.createTest(result.getParameters()[1].toString());
+		test = extent.createTest(result.getName());
 	}
 
 	@Override
