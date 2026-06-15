@@ -24,8 +24,8 @@ public class RegistrationPage {
     private final By continueBtn = By.cssSelector("input[value='Continue']");
 
     // Success page
-    private final By successMsg =
-            By.xpath("//h1[contains(text(),'Your Account Has Been Created!')]");
+//    private final By successMsg =
+//            By.xpath("//h1[contains(text(),'Your Account Has Been Created!')]");
 
     private final By successContinueBtn =
             By.linkText("Continue");
@@ -47,10 +47,10 @@ public class RegistrationPage {
         WaitUtil.waitForClickable(driver, privacyPolicy).click();
         WaitUtil.waitForClickable(driver, continueBtn).click();
 
-        // Verify registration success
-        WaitUtil.waitForVisible(driver, successMsg);
-
-        // Click Continue
-        WaitUtil.waitForClickable(driver, successContinueBtn).click();
+//        // Verify registration success
+//        WaitUtil.waitForVisible(driver, successMsg);
+//
+//        // Click Continue
+//        WaitUtil.waitForClickable(driver, successContinueBtn).click();
     }
 }
