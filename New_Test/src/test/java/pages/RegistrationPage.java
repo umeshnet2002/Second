@@ -8,31 +8,49 @@ import utilities.WaitUtil;
 
 public class RegistrationPage {
 
-	WebDriver driver = DriverFactory.getDriver();
-	By account = By.cssSelector("a[title='My Account']");
+    WebDriver driver = DriverFactory.getDriver();
 
-	public void registration(String fname, String lname, String email, String phone, String password) {
+    private final By myAccount = By.cssSelector("a[title='My Account']");
+    private final By registerLink = By.linkText("Register");
 
-		WaitUtil.waitForClickable(driver, account).click();
-		WaitUtil.waitForClickable(driver, By.xpath("//*[@id='top-links']/ul/li[2]/ul/li[1]")).click();
-		WaitUtil.waitForVisible(driver, By.id("input-firstname")).sendKeys(fname);
+    private final By firstName = By.id("input-firstname");
+    private final By lastName = By.id("input-lastname");
+    private final By emailField = By.id("input-email");
+    private final By telephone = By.id("input-telephone");
+    private final By passwordField = By.id("input-password");
+    private final By confirmPassword = By.id("input-confirm");
 
-		WaitUtil.waitForVisible(driver, By.id("input-lastname")).sendKeys(lname);
+    private final By privacyPolicy = By.name("agree");
+    private final By continueBtn = By.cssSelector("input[value='Continue']");
 
-		WaitUtil.waitForVisible(driver, By.id("input-email")).sendKeys(email);
+    // Success page
+    private final By successMsg =
+            By.xpath("//h1[contains(text(),'Your Account Has Been Created!')]");
 
-		WaitUtil.waitForVisible(driver, By.id("input-telephone")).sendKeys(phone);
+    private final By successContinueBtn =
+            By.linkText("Continue");
 
-		WaitUtil.waitForClickable(driver, By.id("input-password")).sendKeys(password);
+    public void registration(String fname, String lname,
+                             String email, String phone,
+                             String password) {
 
-		WaitUtil.waitForVisible(driver, By.id("input-confirm")).sendKeys(password);
+        WaitUtil.waitForClickable(driver, myAccount).click();
+        WaitUtil.waitForClickable(driver, registerLink).click();
 
-		WaitUtil.waitForClickable(driver, By.cssSelector("input[name='agree']")).click();
+        WaitUtil.waitForVisible(driver, firstName).sendKeys(fname);
+        WaitUtil.waitForVisible(driver, lastName).sendKeys(lname);
+        WaitUtil.waitForVisible(driver, emailField).sendKeys(email);
+        WaitUtil.waitForVisible(driver, telephone).sendKeys(phone);
+        WaitUtil.waitForVisible(driver, passwordField).sendKeys(password);
+        WaitUtil.waitForVisible(driver, confirmPassword).sendKeys(password);
 
-		WaitUtil.waitForClickable(driver, By.cssSelector("input[value='Continue']")).click();
+        WaitUtil.waitForClickable(driver, privacyPolicy).click();
+        WaitUtil.waitForClickable(driver, continueBtn).click();
 
-		WaitUtil.waitForClickable(driver, By.xpath("//*[@id='content']/div/div/a")).click();
+        // Verify registration success
+        WaitUtil.waitForVisible(driver, successMsg);
 
-	}
-
+        // Click Continue
+        WaitUtil.waitForClickable(driver, successContinueBtn).click();
+    }
 }
