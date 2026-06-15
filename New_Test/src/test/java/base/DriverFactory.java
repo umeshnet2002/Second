@@ -27,7 +27,7 @@ public class DriverFactory {
 			options.addArguments("--disable-gpu");
 			options.addArguments("--window-size=1920,1080");
 
-			driver.set(new ChromeDriver());
+			driver.set(new ChromeDriver(options));
 
 		}
 
