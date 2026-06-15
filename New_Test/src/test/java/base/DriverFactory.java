@@ -47,7 +47,7 @@ public class DriverFactory {
 			options.addArguments("--disable-gpu");
 			options.addArguments("--window-size=1920,1080");
 
-			driver.set(new EdgeDriver());
+			driver.set(new EdgeDriver(options));
 		}
 
 		getDriver().manage().window().maximize();
