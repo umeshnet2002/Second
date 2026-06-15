@@ -63,7 +63,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 dir('New_test') {
-                    bat 'docker run --rm testng-framework'
+                    bat 'docker run testng-framework'
                 }
             }
         }
