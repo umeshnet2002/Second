@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 public class TestDataProviders {
 	@DataProvider(name = "RegistrationData")
 	public Object[][] getRegistrationData() {
-		return new Object[][] { { "John", "Doe", "doejohn1234567817@gmail.com","12894967", "password123" }
+		return new Object[][] { { "John", "Doe", "doejohn1234567820@gmail.com","12894967", "password123" }
 
 		};
 	}

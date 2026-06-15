@@ -1,8 +1,10 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import base.DriverFactory;
 import dataproviders.TestDataProviders;
 import pages.RegistrationPage;
 
@@ -13,6 +15,11 @@ public class RegistrationTest extends BaseClass {
 		RegistrationPage pompages = new RegistrationPage();
 
 		pompages.registration(fname, lname, email, phone, password);
+		
+		 String actualUrl = DriverFactory.getDriver().getCurrentUrl();
+//		   System.out.println(actualUrl);
+
+		    Assert.assertTrue(actualUrl.contains("account"), "Registration failed!");
 
 	}
 }
