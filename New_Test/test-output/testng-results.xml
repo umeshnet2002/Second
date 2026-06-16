@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-16T10:36:37 IST" name="Suite" finished-at="2026-06-16T10:37:01 IST" duration-ms="24644">
+    <groups>
+    </groups>
+    <test started-at="2026-06-16T10:36:37 IST" name="Test" finished-at="2026-06-16T10:37:01 IST" duration-ms="24644">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTest@19b89d4]" started-at="2026-06-16T10:36:42 IST" name="setUp" finished-at="2026-06-16T10:36:44 IST" duration-ms="2093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="login()[pri:2, instance:tests.LoginTest@19b89d4]" started-at="2026-06-16T10:36:44 IST" name="login" finished-at="2026-06-16T10:36:46 IST" duration-ms="1505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.LoginTest@19b89d4]" started-at="2026-06-16T10:36:46 IST" name="quitDriver" finished-at="2026-06-16T10:36:46 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.RegistrationTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.RegistrationTest@3f1d2e23]" started-at="2026-06-16T10:36:37 IST" name="setUp" finished-at="2026-06-16T10:36:39 IST" duration-ms="2433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="registration(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.RegistrationTest@3f1d2e23]" started-at="2026-06-16T10:36:39 IST" name="registration" data-provider="RegistrationData" finished-at="2026-06-16T10:36:42 IST" duration-ms="2428" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[John]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Doe]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[doejohn1234567824@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12894967]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[password123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registration -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.RegistrationTest@3f1d2e23]" started-at="2026-06-16T10:36:42 IST" name="quitDriver" finished-at="2026-06-16T10:36:42 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- tests.RegistrationTest -->
+      <class name="tests.CheckoutTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.CheckoutTest@30b6ffe0]" started-at="2026-06-16T10:36:55 IST" name="setUp" finished-at="2026-06-16T10:36:57 IST" duration-ms="2003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="checkout(java.lang.String)[pri:4, instance:tests.CheckoutTest@30b6ffe0]" started-at="2026-06-16T10:36:57 IST" name="checkout" data-provider="CheckoutData" finished-at="2026-06-16T10:37:01 IST" duration-ms="3761" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[macbook]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkout -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.CheckoutTest@30b6ffe0]" started-at="2026-06-16T10:37:01 IST" name="quitDriver" finished-at="2026-06-16T10:37:01 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- tests.CheckoutTest -->
+      <class name="tests.SearchTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@4bbf6d0e]" started-at="2026-06-16T10:36:46 IST" name="setUp" finished-at="2026-06-16T10:36:48 IST" duration-ms="1932" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="search(java.lang.String)[pri:3, instance:tests.SearchTest@4bbf6d0e]" started-at="2026-06-16T10:36:48 IST" name="search" data-provider="SearchData" finished-at="2026-06-16T10:36:50 IST" duration-ms="2610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[macbook]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SearchTest@4bbf6d0e]" started-at="2026-06-16T10:36:51 IST" name="quitDriver" finished-at="2026-06-16T10:36:51 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@4bbf6d0e]" started-at="2026-06-16T10:36:51 IST" name="setUp" finished-at="2026-06-16T10:36:53 IST" duration-ms="2018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="search(java.lang.String)[pri:3, instance:tests.SearchTest@4bbf6d0e]" started-at="2026-06-16T10:36:53 IST" name="search" data-provider="SearchData" finished-at="2026-06-16T10:36:55 IST" duration-ms="2685" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iphone]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- search -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:tests.SearchTest@4bbf6d0e]" started-at="2026-06-16T10:36:55 IST" name="quitDriver" finished-at="2026-06-16T10:36:55 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- tests.SearchTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
